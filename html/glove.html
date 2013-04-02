@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>XBall Client</title>
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/nowjs/now.js"></script>
+
+<script>
+$(document).ready(function(){
+
+  now.name = "Device";
+  acceleration = {x:0, y:0};
+
+  if ( window.DeviceMotionEvent != undefined ) 
+  {
+    window.ondevicemotion = function(e) 
+    {
+      var gravity = event.accelerationIncludingGravity;
+      acceleration.x = gravity.x * 5;
+      acceleration.y = gravity.y * 5 * -1;
+
+      $('#messages').text(now.name + ": " + 
+        acceleration.x + ", " + acceleration.y);
+
+      now.distributeMessage(acceleration);
+    }
+  }
+
+  now.receiveMessage = function(name, message){
+    console.log(name + ": " + message.x + ", " + message.y);
+  }
+
+});
+</script>
+  <style>
+    body{
+      background-color: white;
+    }
+
+    #button{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      box-sizing: border-box;
+
+      background-color: black;
+
+    }
+  </style>
+</head>
+<body>
+<div id="messages">
+</div>
+<div id="button"></div>
+
+</body>
+</html>

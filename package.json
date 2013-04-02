@@ -1,0 +1,13 @@
+{
+  "name": "glove",
+  "version": "0.0.1",
+  "dependencies": {
+    "now": "0.8.1",
+    "socket.io": " 0.9.13"
+	"express": "3.1.x"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  }
+}
