@@ -7,14 +7,14 @@ var server = http.createServer(function(req, response)
 
     /* ROUTE PAGES */
     '/': ['/html/view.html', 'text/html'],
-    '/client': ['/html/glove.html', 'text/html'],
+    '/client': ['/html/client.html', 'text/html'],
 
     /* SCRIPTS */
     '/js/jquery.js': ['/js/jquery.js', 'text/javascript'],
     '/js/underscore.js': ['/js/underscore.js', 'text/javascript'],
 
     /* STYLES */
-    '/css/glove.css': ['/css/glove.css', 'text/css'],
+    '/css/screen.css': ['/css/screen.css', 'text/css'],
 
     /* IMAGES */
     '/img/glove-apple-touch-icon-precomposed.png': 
